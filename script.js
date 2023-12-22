@@ -32,7 +32,16 @@ document.addEventListener("DOMContentLoaded", function () {
   var locationsList = document.getElementById("locations-list");
 
   locations.forEach(function (location, index) {
-    var marker = L.marker([location.lat, location.lng]).addTo(map);
+    // Create a CircleMarker
+    var marker = L.circleMarker([location.lat, location.lng], {
+      radius: 8, // Adjust the radius as needed
+      fillColor: "red", // Adjust the fill color
+      color: "white", // Adjust the border color
+      weight: 2, // Adjust the border weight
+      opacity: 1,
+      fillOpacity: 0.8,
+    }).addTo(map);
+
     markers.push(marker);
 
     var listItem = document.createElement("li");
