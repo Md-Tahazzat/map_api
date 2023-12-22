@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Map</title>
+
+
+    <!-- leaflet css and js -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <!-- tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        #locations-list li {
+            margin-left: 30px;
+            margin: 10px 20px;
+            cursor: pointer;
+            font-weight: 500;
+            color: white;
+        }
+
+        #locations-list li.active {
+            color: rgb(255, 236, 96);
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center bg-slate-300">
+
+    <ul class="w-2/6 h-full bg-slate-500 py-32 pl-20" id="locations-list"></ul>
+    <div class="w-4/6 h-screen flex items-center justify-center">
+        <div class="w-full h-[70vh]" id="map"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
