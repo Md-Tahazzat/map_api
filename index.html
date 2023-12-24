@@ -13,32 +13,66 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-    <!-- tailwind css -->
-    <script src="https://cdn.tailwindcss.com"></script>
 
-    <style>
-        #locations-list li {
-            margin-left: 30px;
-            margin: 10px 20px;
-            cursor: pointer;
-            font-weight: 500;
-            color: white;
-        }
+    <!-- fontawesome CDN -->
+    <script src="https://kit.fontawesome.com/7a263e28c3.js" crossorigin="anonymous"></script>
+    <!-- custom css -->
+    <link rel="stylesheet" href="style.css">
 
-        #locations-list li.active {
-            color: rgb(255, 236, 96);
-        }
-    </style>
 </head>
 
-<body class="flex items-center justify-center bg-slate-300">
+<body>
 
-    <ul class="w-2/6 h-full bg-slate-500 py-32 pl-20" id="locations-list"></ul>
-    <div class="w-4/6 h-screen flex items-center justify-center">
-        <div class="w-full h-[70vh]" id="map"></div>
-    </div>
+    <section id="map-section">
+        <div id="left-container">
+            <div id="location-list-container">
+                <h1>EXPLORE OUR COMMUNITY</h1>
 
-    <script src="script.js"></script>
+                <!-- accommodations list -->
+                <label onclick="toggleMenu('accommodations','icon-plus-1', 'icon-minus-1')"
+                    class="menu-label"><span>Accommodations</span><span><i id="icon-plus-1"
+                            class="fa-solid fa-plus"></i><i id="icon-minus-1"
+                            class="fa-solid fa-minus hidden"></i></span></label>
+                <ul class="hidden" id="accommodations">
+                </ul>
+                <!-- Dining and night life -->
+                <label onclick="toggleMenu('dining-and-nightlife','icon-plus-2', 'icon-minus-2')"
+                    class="menu-label"><span>Dining & Nightlife</span><span><i id="icon-plus-2"
+                            class="fa-solid fa-plus"></i><i id="icon-minus-2"
+                            class="fa-solid fa-minus hidden"></i></span></label>
+                <ul class="hidden" id="dining-and-nightlife">
+                </ul>
+
+                <!-- Harborside Food Trucks -->
+                <label id="food-truck-label" onclick="showFoodTruck()" class="menu-label">
+                    <span>Harborside Food Trucks</span>
+                    <span>
+                        <img src="./images/food_track.png" alt="">
+                    </span></label>
+                <!-- shopping and convention
+                <label onclick="toggleMenu('shopping-and-convention','icon-plus-3', 'icon-minus-3')"
+                    class="menu-label"><span>Shopping & Convention</span><span><i id="icon-plus-3"
+                            class="fa-solid fa-plus"></i><i id="icon-minus-3"
+                            class="fa-solid fa-minus hidden"></i></span></label>
+                <ul class="hidden" id="shopping-and-convention"> -->
+                </ul>
+                <!-- park -->
+                <label onclick="toggleMenu('parks','icon-plus-10', 'icon-minus-10')"
+                    class="menu-label"><span>Parks</span><span><i id="icon-plus-10" class="fa-solid fa-plus"></i><i
+                            id="icon-minus-10" class="fa-solid fa-minus hidden"></i></span></label>
+                <ul class="hidden" id="parks">
+                </ul>
+
+            </div>
+        </div>
+
+        <!-- map container starts -->
+        <div id="right-container">
+            <div class="w-full h-[70vh]" id="map"></div>
+        </div>
+    </section>
+
+    <script type="module" src="script.js"></script>
 </body>
 
 </html>
